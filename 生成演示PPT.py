@@ -118,7 +118,7 @@ add_text_box(s, Inches(1.5), Inches(1.0), Inches(10.5), Inches(1.2),
 add_text_box(s, Inches(1.5), Inches(3.6), Inches(10.5), Inches(0.8),
     'DRP系统 T11 合并报表与一键出表 — 子模块', size=20, color=RGBColor(0xAA, 0xBB, 0xCC), align=PP_ALIGN.CENTER)
 add_text_box(s, Inches(1.5), Inches(4.8), Inches(10.5), Inches(0.6),
-    '中国社会科学院大学 · 2025级会计专硕二班 · 尚浩然', size=16, color=RGBColor(0x88, 0x99, 0xAA), align=PP_ALIGN.CENTER)
+    '中国社会科学院大学 · 2025级会计专硕二班 · 尚浩然、李金阳', size=16, color=RGBColor(0x88, 0x99, 0xAA), align=PP_ALIGN.CENTER)
 add_text_box(s, Inches(1.5), Inches(5.4), Inches(10.5), Inches(0.6),
     f'指导老师：张金昌  |  {datetime.now().strftime("%Y年%m月")}', size=14, color=RGBColor(0x77, 0x88, 0x99), align=PP_ALIGN.CENTER)
 
@@ -523,7 +523,7 @@ add_text_box(s, Inches(1.5), Inches(3.2), Inches(10.5), Inches(3.0),
 add_text_box(s, Inches(1.5), Inches(5.5), Inches(10.5), Inches(0.8),
     '谢谢！欢迎批评指正', size=24, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
 add_text_box(s, Inches(1.5), Inches(6.3), Inches(10.5), Inches(0.6),
-    '中国社会科学院大学 · 2025级MPAcc二班 · 尚浩然 · 指导老师：张金昌', size=14, color=RGBColor(0x88, 0x99, 0xAA), align=PP_ALIGN.CENTER)
+    '中国社会科学院大学 · 2025级MPAcc二班 · 尚浩然、李金阳 · 指导老师：张金昌', size=14, color=RGBColor(0x88, 0x99, 0xAA), align=PP_ALIGN.CENTER)
 
 # ── 保存 ──
 output = Path(__file__).parent / 'T11-介绍PPT-v2.pptx'

@@ -80,7 +80,7 @@ doc.add_paragraph()
 for _ in range(4): doc.add_paragraph()
 add_para(f'版本：V2.0', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
 add_para(f'编制日期：{datetime.now().strftime("%Y年%m月%d日")}', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
-add_para('编制人：尚浩然 · 中国社会科学院大学 MPAcc 二班', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
+add_para('小组成员：尚浩然、李金阳 · 中国社会科学院大学 MPAcc 二班', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
 add_para('指导老师：张金昌', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
 doc.add_page_break()
 

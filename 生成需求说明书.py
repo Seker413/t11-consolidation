@@ -85,7 +85,7 @@ add_para(f'文档编号：DRP-T11-SRS-V4.0', size=11, align=WD_ALIGN_PARAGRAPH.C
 add_para(f'版本号：V4.0（交付定稿）', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
 add_para(f'编制日期：{datetime.now().strftime("%Y年%m月%d日")}', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
 add_para('所属课程：财务数智化转型与AI应用（2025级会计专硕）', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
-add_para('编制人：尚浩然 · 中国社会科学院大学 MPAcc 二班', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
+add_para('小组成员：尚浩然、李金阳 · 中国社会科学院大学 MPAcc 二班', size=11, align=WD_ALIGN_PARAGRAPH.CENTER)
 doc.add_page_break()
 
 # ============ 版本历史 ============
@@ -93,10 +93,10 @@ doc.add_heading('版本历史', level=1)
 add_table(
     ['版本', '日期', '修改内容', '作者'],
     [
-        ['V1.0', '2026-05-14', '初稿：Excel上传+三种交易类型+分录生成', '尚浩然'],
-        ['V2.0', '2026-05-22', '模块化架构（engine/utils）+异常检测+仪表盘+手动录入', '尚浩然'],
-        ['V3.0', '2026-05-29', '补充用例图/时序图/数据模型/政策依据，交付定稿', '尚浩然'],
-        ['V4.0', datetime.now().strftime('%Y-%m-%d'), '新增试算平衡表/历史记录/分录手动调整/分录筛选/驾驶舱增强', '尚浩然'],
+        ['V1.0', '2026-05-14', '初稿：Excel上传+三种交易类型+分录生成', '尚浩然、李金阳'],
+        ['V2.0', '2026-05-22', '模块化架构（engine/utils）+异常检测+仪表盘+手动录入', '尚浩然、李金阳'],
+        ['V3.0', '2026-05-29', '补充用例图/时序图/数据模型/政策依据，交付定稿', '尚浩然、李金阳'],
+        ['V4.0', datetime.now().strftime('%Y-%m-%d'), '新增试算平衡表/历史记录/分录手动调整/分录筛选/驾驶舱增强', '尚浩然、李金阳'],
     ]
 )
 
