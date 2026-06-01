@@ -379,32 +379,36 @@ def main():
     st.subheader("🚀 快捷操作")
     qa1, qa2, qa3, qa4 = st.columns(4)
     with qa1:
-        st.markdown("""
-        <div style="border:1px solid #ddd;border-radius:8px;padding:12px;text-align:center">
-            <div style="font-size:20px">🏦</div>
-            <div style="font-weight:600;font-size:14px">银行对账</div>
-            <div style="font-size:11px;color:#999">处理集团内部债权债务</div>
+        st.markdown(f"""
+        <div style="border:1px solid #1A3C6E;border-radius:8px;padding:12px;text-align:center;background:#f0f5ff">
+            <div style="font-size:24px">📊</div>
+            <div style="font-weight:600;font-size:14px;color:#1A3C6E">抵消笔数</div>
+            <div style="font-size:22px;font-weight:700;color:#1A3C6E">{summary['eliminated']}</div>
+            <div style="font-size:11px;color:#666">共{summary['total_trades']}笔交易</div>
         </div>""", unsafe_allow_html=True)
     with qa2:
         st.markdown(f"""
-        <div style="border:1px solid #ddd;border-radius:8px;padding:12px;text-align:center">
-            <div style="font-size:20px">🔗</div>
-            <div style="font-weight:600;font-size:14px">关联交易</div>
-            <div style="font-size:11px;color:#999">本批识别 {summary['eliminated']} 笔需抵消</div>
+        <div style="border:1px solid #E74C3C;border-radius:8px;padding:12px;text-align:center;background:#fff5f5">
+            <div style="font-size:24px">⚠️</div>
+            <div style="font-weight:600;font-size:14px;color:#E74C3C">异常预警</div>
+            <div style="font-size:22px;font-weight:700;color:#E74C3C">{summary.get('anomaly_count', 0)}</div>
+            <div style="font-size:11px;color:#666">项数据异常</div>
         </div>""", unsafe_allow_html=True)
     with qa3:
-        st.markdown("""
-        <div style="border:1px solid #ddd;border-radius:8px;padding:12px;text-align:center">
-            <div style="font-size:20px">📝</div>
-            <div style="font-weight:600;font-size:14px">合并抵消</div>
-            <div style="font-size:11px;color:#999">查看下方抵消分录明细</div>
+        st.markdown(f"""
+        <div style="border:1px solid #2ECC71;border-radius:8px;padding:12px;text-align:center;background:#f5fff5">
+            <div style="font-size:24px">💰</div>
+            <div style="font-weight:600;font-size:14px;color:#2ECC71">冲减存货</div>
+            <div style="font-size:22px;font-weight:700;color:#2ECC71">¥{summary['total_inventory_offset']:,.0f}</div>
+            <div style="font-size:11px;color:#666">未实现利润总额</div>
         </div>""", unsafe_allow_html=True)
     with qa4:
         st.markdown(f"""
-        <div style="border:1px solid #ddd;border-radius:8px;padding:12px;text-align:center">
-            <div style="font-size:20px">📄</div>
-            <div style="font-weight:600;font-size:14px">生成报告</div>
-            <div style="font-size:11px;color:#999">本批共 {summary['eliminated']} 笔抵消分录</div>
+        <div style="border:1px solid #F39C12;border-radius:8px;padding:12px;text-align:center;background:#fffdf5">
+            <div style="font-size:24px">📉</div>
+            <div style="font-weight:600;font-size:14px;color:#F39C12">净利润影响</div>
+            <div style="font-size:22px;font-weight:700;color:#F39C12">¥{summary['total_net_profit_impact']:,.0f}</div>
+            <div style="font-size:11px;color:#666">合并层面</div>
         </div>""", unsafe_allow_html=True)
 
     # ========== 最近操作 ==========
