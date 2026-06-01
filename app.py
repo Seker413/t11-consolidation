@@ -374,9 +374,9 @@ def main():
     with dc4: st.metric("冲减存货", f"{summary['total_inventory_offset']:,.0f} 元")
     with dc5: st.metric("合并净利润影响", f"{summary['total_net_profit_impact']:,.0f} 元", delta_color="inverse")
 
-    # ========== 快捷操作 ==========
+    # ========== 数据概览 ==========
     st.divider()
-    st.subheader("🚀 快捷操作")
+    st.subheader("📊 抵消数据概览")
     qa1, qa2, qa3, qa4 = st.columns(4)
     with qa1:
         st.markdown(f"""
