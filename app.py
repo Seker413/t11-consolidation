@@ -13,7 +13,16 @@ from datetime import datetime
 from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
+import matplotlib.font_manager as fm
+
+# 注册本地中文字体（兼容Windows/Linux/Streamlit Cloud）
+_font_path = Path(__file__).parent / "fonts" / "simhei.ttf"
+if _font_path.exists():
+    fm.fontManager.addfont(str(_font_path))
+    _font_name = fm.FontProperties(fname=str(_font_path)).get_name()
+    matplotlib.rcParams['font.sans-serif'] = [_font_name, 'DejaVu Sans']
+else:
+    matplotlib.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 
 # ---------- 项目内部模块 ----------
