@@ -1,0 +1,144 @@
+{
+  "version": "1.0",
+  "tax_rate": 0.25,
+  "cost_methods": ["SPECIFIC_ID", "FIFO"],
+  "entry_templates": {
+    "DOWN": {
+      "label": "顺流交易（母→子）",
+      "description": "未实现利润全部归属于母公司股东，不涉及少数股东分摊",
+      "entries": [
+        {
+          "dr": "营业收入",
+          "cr": null,
+          "amount_formula": "revenue * unsold_ratio",
+          "note": "冲减内部销售收入"
+        },
+        {
+          "dr": null,
+          "cr": "营业成本",
+          "amount_formula": "revenue * unsold_ratio - unrealized_profit",
+          "note": "倒挤营业成本"
+        },
+        {
+          "dr": null,
+          "cr": "存货",
+          "amount_formula": "unrealized_profit",
+          "note": "冲减存货至原销售方成本"
+        },
+        {
+          "dr": "递延所得税资产",
+          "cr": null,
+          "amount_formula": "unrealized_profit * tax_rate",
+          "note": "确认递延所得税资产"
+        },
+        {
+          "dr": null,
+          "cr": "所得税费用",
+          "amount_formula": "unrealized_profit * tax_rate",
+          "note": "冲减所得税费用"
+        }
+      ],
+      "minority_entries": []
+    },
+    "UP": {
+      "label": "逆流交易（子→母）",
+      "description": "未实现利润在母公司与少数股东之间按持股比例分摊",
+      "entries": [
+        {
+          "dr": "营业收入",
+          "cr": null,
+          "amount_formula": "revenue * unsold_ratio",
+          "note": "冲减内部销售收入"
+        },
+        {
+          "dr": null,
+          "cr": "营业成本",
+          "amount_formula": "revenue * unsold_ratio - unrealized_profit",
+          "note": "倒挤营业成本"
+        },
+        {
+          "dr": null,
+          "cr": "存货",
+          "amount_formula": "unrealized_profit",
+          "note": "冲减存货至原销售方成本"
+        },
+        {
+          "dr": "递延所得税资产",
+          "cr": null,
+          "amount_formula": "unrealized_profit * tax_rate",
+          "note": "确认递延所得税资产"
+        },
+        {
+          "dr": null,
+          "cr": "所得税费用",
+          "amount_formula": "unrealized_profit * tax_rate",
+          "note": "冲减所得税费用"
+        }
+      ],
+      "minority_entries": [
+        {
+          "dr": "少数股东权益",
+          "cr": null,
+          "amount_formula": "unrealized_profit * (1 - tax_rate) * minority_ratio",
+          "note": "冲减少数股东权益"
+        },
+        {
+          "dr": null,
+          "cr": "少数股东损益",
+          "amount_formula": "unrealized_profit * (1 - tax_rate) * minority_ratio",
+          "note": "冲减少数股东损益"
+        }
+      ]
+    },
+    "FLAT": {
+      "label": "平流交易（子↔子）",
+      "description": "未实现利润按销售方少数股东持股比例分摊",
+      "entries": [
+        {
+          "dr": "营业收入",
+          "cr": null,
+          "amount_formula": "revenue * unsold_ratio",
+          "note": "冲减内部销售收入"
+        },
+        {
+          "dr": null,
+          "cr": "营业成本",
+          "amount_formula": "revenue * unsold_ratio - unrealized_profit",
+          "note": "倒挤营业成本"
+        },
+        {
+          "dr": null,
+          "cr": "存货",
+          "amount_formula": "unrealized_profit",
+          "note": "冲减存货至原销售方成本"
+        },
+        {
+          "dr": "递延所得税资产",
+          "cr": null,
+          "amount_formula": "unrealized_profit * tax_rate",
+          "note": "确认递延所得税资产"
+        },
+        {
+          "dr": null,
+          "cr": "所得税费用",
+          "amount_formula": "unrealized_profit * tax_rate",
+          "note": "冲减所得税费用"
+        }
+      ],
+      "minority_entries": [
+        {
+          "dr": "少数股东权益",
+          "cr": null,
+          "amount_formula": "unrealized_profit * (1 - tax_rate) * minority_ratio",
+          "note": "冲减少数股东权益"
+        },
+        {
+          "dr": null,
+          "cr": "少数股东损益",
+          "amount_formula": "unrealized_profit * (1 - tax_rate) * minority_ratio",
+          "note": "冲减少数股东损益"
+        }
+      ]
+    }
+  }
+}
