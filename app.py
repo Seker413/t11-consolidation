@@ -224,7 +224,7 @@ def render_entry_card(r):
 def main():
     st.title("📊 基于AI规则引擎的内部存货交易未实现利润自动抵消")
     st.caption("DRP系统 T11 合并报表与一键出表 — 子模块 | V2.0 模块化架构 | 2025级会计专硕")
-    st.caption("小组成员：尚浩然、李金阳 | 指导老师：张金昌")
+    st.caption("小组成员：尚浩然、李金阳、王琨 | 指导老师：张金昌")
 
     init_db()
     conn = sqlite3.connect(str(DB_PATH))
@@ -263,7 +263,7 @@ def main():
             st.rerun()
 
         st.divider()
-        st.caption("小组成员：尚浩然、李金阳")
+        st.caption("小组成员：尚浩然、李金阳、王琨")
         st.caption("指导老师：张金昌")
         st.caption("中国社会科学院大学 MPAcc 二班")
 
