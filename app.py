@@ -483,7 +483,7 @@ def main():
     st.subheader("📈 合并报表关键项目抵消前后对比")
     tr = sum(r["revenue"] for r in results)
     tc2 = sum(r["cost"] for r in results)
-    tib = sum(r["revenue"]*r["unsold_ratio"] for r in results)
+    tib = sum(r["cost"]*r["unsold_ratio"] for r in results)
     cdata = pd.DataFrame([
         {"项目":"营业收入","抵消前":f"{tr:,.0f}","抵消金额":f"-{summary['total_revenue_offset']:,.0f}","抵消后":f"{tr-summary['total_revenue_offset']:,.0f}"},
         {"项目":"营业成本","抵消前":f"{tc2:,.0f}","抵消金额":f"-{summary['total_cost_offset']:,.0f}","抵消后":f"{tc2-summary['total_cost_offset']:,.0f}"},

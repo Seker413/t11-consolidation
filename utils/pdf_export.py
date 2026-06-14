@@ -4,6 +4,7 @@ PDF导出模块
 import io
 import os
 from datetime import datetime
+from pathlib import Path
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
@@ -18,6 +19,7 @@ from reportlab.lib.enums import TA_LEFT
 def _find_chinese_font():
     """查找系统中可用的中文字体"""
     paths = [
+        str(Path(__file__).parent.parent / "fonts" / "simhei.ttf"),
         "C:/Windows/Fonts/simhei.ttf",
         "C:/Windows/Fonts/msyh.ttc",
         "C:/Windows/Fonts/msyhbd.ttc",
